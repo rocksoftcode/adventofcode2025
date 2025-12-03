@@ -1,7 +1,7 @@
 def lines = new File('day3.txt').readLines()
 def maxes = []
 
-def findLargest12DigitNumber = { line ->
+def largest = { line ->
     def result = ''
     def len = 12
     def curr = 0
@@ -11,7 +11,7 @@ def findLargest12DigitNumber = { line ->
         def pos = -1
         def lim = line.length()-len+1
 
-        for (int i = curr; i < lim; i++) {
+        for (def i = curr; i < lim; i++) {
             def digit = Integer.parseInt(line[i])
             if (digit > dig) {
                 dig = digit
@@ -28,7 +28,7 @@ def findLargest12DigitNumber = { line ->
 }
 
 lines.each {
-    maxes << findLargest12DigitNumber(it).toBigInteger()
+    maxes << largest(it).toBigInteger()
 }
 
 println maxes.sum()
