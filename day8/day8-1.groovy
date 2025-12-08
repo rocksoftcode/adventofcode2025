@@ -32,12 +32,5 @@ sorted.take(1000).each { c ->
     circuits.remove(cMax)
 }
 
-//def p2Ind = circuits.findAll { it.size() == 1 }
-//        .collect { sortedDistances.findIndexOf { y -> y.contains(it[0] as Integer) } }
-//        .sort { -it }[0]
-
-//def p2 = sortedDistances[p2Ind].collect { y -> lines[y][1][0] }.inject(1) { acc, val -> acc * val }
-
 println circuits.collect { it.size() }.sort { -it }.take(3).inject(1) { acc, val -> acc * val }
-//println "Part 2 answer is ${p2}"
 
